@@ -26,7 +26,6 @@ isTrue = True
 
 #Language database
 data= googletrans.LANGUAGES
-#Keys and values from dictionary
 data_keys= list(data.keys())
 data_values= list(data.values())
 data_capitalized= []
@@ -93,15 +92,11 @@ def tts(txt,language):
 def update_fun_fact(event=None):
     selected_country = variable.get() #works
     fun_fact = fun_facts.get(str(selected_country))
-    text2.delete(0, tk.END)
-    text2.insert(0, fun_fact)
+    text2.config(state= tk.NORMAL)
+    text2.delete("1.0", tk.END)
+    text2.insert("1.0", fun_fact)
+    text2.config(state=tk.DISABLED)
     
-
-
-
-
-    
-
 #******************************************************************************
 
 
@@ -120,9 +115,8 @@ text.pack()
 text.place(x=5, y=126)
 
 #Fun facts
-text2= tk.Entry(root, width=635) #Choose a language
+text2= tk.Text(root, width=60, height= 5) #Choose a language
 text2.pack()
-#text2.config(state="readonly")
 text2.place(x=5, y=229)
 
 #Dropdown list
@@ -131,8 +125,6 @@ variable.set(data_capitalized[0]) # default value
 
 lang_options = OptionMenu(root, variable, *data_capitalized, command= update_fun_fact)
 lang_options.place(x=530,y=195)
-
-
 
 #Bottom frame including Your Result
 div9 = tk.Frame(main_frame, width=635, height=42, bg="#2F0DFE") 
@@ -147,13 +139,6 @@ div11.place(x=0, y=364)
 #Text
 main_title = tk.Label(main_frame, text="ProTranslate", font=("Calibri", 20, "normal"), fg="#D9D9D9",bg= "#2F0DFE" )
 main_title.place(x=5, y=5)  #title
-
-# image_path = r"C:\Users\Guest1\Downloads\New folder\translate_icon.png"  # Replace with the actual image path
-# image = PhotoImage(file=image_path)
-
-# image_label = tk.Label(root, image=image)
-# image_label.pack()
-# image_label.place(x=500, y=5)
 
 input_text = tk.Label(main_frame, text="Type what you want to be translated", font=("Inter", 13, "normal"), fg="#D9D9D9",bg="#1E1E1E")
 input_text.place(x=5, y=100) #abov text box
