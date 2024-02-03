@@ -1,6 +1,6 @@
 # ProTranslate Application
 
-ProTranslate is a simple translation application built using Python and the Tkinter library. This application allows users to translate text from one language to another, utilize speech recognition for input, and even generate audio output of the translated text. It also features a fun fact feature associated with selected languages.
+ProTranslate is a simple translation application utilising Python and the Tkinter library. This application allows users to translate text from one language to another, utilize speech recognition for input, and even generate audio output of the translated text through a simple, easy-to-use UI.
 
 ## Table of Contents
 
